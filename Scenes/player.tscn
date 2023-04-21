@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc6ib7iqvvde3"]
+
+[ext_resource type="Texture2D" uid="uid://bovhyhpciijbo" path="res://Art/plh_player.png" id="1_kxa32"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcd7y"]
+atlas = ExtResource("1_kxa32")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qpcj"]
+atlas = ExtResource("1_kxa32")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flgqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcd7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qpcj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="StaticBody2D"]
+
+[node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_flgqn")
+frame_progress = 0.308777
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(8, 8, 0, -8, -8, 8)
