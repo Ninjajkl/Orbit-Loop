@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://dyvlktvvrpcc0"]
+[gd_scene load_steps=3 format=3 uid="uid://dyvlktvvrpcc0"]
+
+[ext_resource type="Texture2D" uid="uid://cimtv5eqrm8ss" path="res://Art/plh_blackground.png" id="1_nqmu3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mejof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nqmu3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Space" type="Node"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(240, 135)
+sprite_frames = SubResource("SpriteFrames_mejof")

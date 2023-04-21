@@ -25,10 +25,12 @@ animations = [{
 }]
 
 [node name="Player" type="StaticBody2D"]
+metadata/_edit_group_ = true
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_flgqn")
-frame_progress = 0.308777
+frame_progress = 0.80866
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(8, 8, 0, -8, -8, 8)
