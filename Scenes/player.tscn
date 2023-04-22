@@ -16,6 +16,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(232, 136)
 script = ExtResource("1_gh8t3")
 rotation_speed = 5
 bullet_speed = 300

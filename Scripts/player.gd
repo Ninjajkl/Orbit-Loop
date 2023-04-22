@@ -25,9 +25,11 @@ func shoot():
 		bullet.rotation = rotation
 		bullet.position = position
 		if(i == 0):
-			bullet.position.x+=5*sin(rotation-PI/2)
+			bullet.position.x+=8*sin(rotation-PI/2)
+			bullet.position.y-=8*cos(rotation-PI/2)
 		else:
-			bullet.position.x-=5*sin(rotation-PI/2)
+			bullet.position.x-=8*sin(rotation-PI/2)
+			bullet.position.y+=8*cos(rotation-PI/2)
 		bullet.set_linear_velocity(Vector2(bullet_speed,0.0).rotated(global_rotation-PI/2))
-		print(rotation)
+		print(sin(rotation-PI/2))
 		get_parent().add_child(bullet)
