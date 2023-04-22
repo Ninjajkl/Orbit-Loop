@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bypq336c6lrge"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_kr7jf"]
+[ext_resource type="Texture2D" uid="uid://bovhyhpciijbo" path="res://Art/plh_player.png" id="2_3iaux"]
+[ext_resource type="Texture2D" uid="uid://p5fjaheh4bl3" path="res://icon.svg" id="3_jiqhv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcd7y"]
+atlas = ExtResource("2_3iaux")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qpcj"]
+atlas = ExtResource("2_3iaux")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flgqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jiqhv")
+}, {
+"duration": 2.0,
+"texture": null
+}],
+"loop": true,
+"name": &"alien",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcd7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qpcj")
+}],
+"loop": true,
+"name": &"meteoroid",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="StaticBody2D"]
+script = ExtResource("1_kr7jf")
+enemy_type = "meteoroid"
+metadata/_edit_group_ = true
+
+[node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_flgqn")
+animation = &"alien"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(8, 8, 0, -8, -8, 8)
