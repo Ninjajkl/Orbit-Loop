@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://mbhrwe3vu6fk"]
+
+[ext_resource type="Texture2D" uid="uid://uvjp1trd3yjf" path="res://Art/plh_bullet.png" id="1_10yv8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4m08t"]
+radius = 8.0
+
+[node name="Bullet" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_10yv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CircleShape2D_4m08t")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyvlktvvrpcc0"]
+[gd_scene load_steps=5 format=3 uid="uid://dyvlktvvrpcc0"]
 
 [ext_resource type="Texture2D" uid="uid://cimtv5eqrm8ss" path="res://Art/plh_blackground.png" id="1_nqmu3"]
+[ext_resource type="PackedScene" uid="uid://cc6ib7iqvvde3" path="res://Scenes/player.tscn" id="2_1u2xv"]
+[ext_resource type="Script" path="res://Scripts/orbiter.gd" id="2_3et06"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mejof"]
 animations = [{
@@ -18,3 +20,11 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(240, 135)
 sprite_frames = SubResource("SpriteFrames_mejof")
+
+[node name="PlayerPivot" type="Node2D" parent="."]
+position = Vector2(240, 135)
+script = ExtResource("2_3et06")
+rotation_speed = 1
+
+[node name="Player" parent="PlayerPivot" instance=ExtResource("2_1u2xv")]
+position = Vector2(0, -71)
