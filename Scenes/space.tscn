@@ -1,16 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cavrayjpptu48"]
+[gd_scene load_steps=8 format=3 uid="uid://cbaavw5f3ap1"]
 
 [ext_resource type="Script" path="res://Scripts/Space.gd" id="1_b45tk"]
-[ext_resource type="Texture2D" uid="uid://cimtv5eqrm8ss" path="res://Art/plh_blackground.png" id="1_nqmu3"]
-[ext_resource type="PackedScene" uid="uid://cc6ib7iqvvde3" path="res://Scenes/player.tscn" id="2_1u2xv"]
+[ext_resource type="PackedScene" uid="uid://bky4paeq3f5fr" path="res://Scenes/player.tscn" id="2_1u2xv"]
 [ext_resource type="Script" path="res://Scripts/orbiter.gd" id="2_3et06"]
-[ext_resource type="Texture2D" uid="uid://372pe2jf7fe0" path="res://Art/cow.png" id="4_nuowp"]
+[ext_resource type="Texture2D" uid="uid://cimtv5eqrm8ss" path="res://Art/MenuArt/plh_blackground.png" id="2_kds8x"]
+[ext_resource type="Texture2D" uid="uid://372pe2jf7fe0" path="res://Art/SpaceStuff/cow.png" id="3_w58wn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mejof"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_nqmu3")
+"texture": ExtResource("2_kds8x")
 }],
 "loop": true,
 "name": &"default",
@@ -34,7 +34,7 @@ sprite_frames = SubResource("SpriteFrames_mejof")
 
 [node name="Cow" type="Sprite2D" parent="Background"]
 position = Vector2(240, 135)
-texture = ExtResource("4_nuowp")
+texture = ExtResource("3_w58wn")
 
 [node name="PlayerPivot" type="Node2D" parent="."]
 position = Vector2(240, 135)

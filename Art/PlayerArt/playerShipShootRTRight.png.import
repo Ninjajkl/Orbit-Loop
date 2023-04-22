@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xw3w0q60q6l6"
-path="res://.godot/imported/emptySpace.png-598e6c9ae7392f21c59cca695bd73ae1.ctex"
+uid="uid://c1mqixeblbf8x"
+path="res://.godot/imported/playerShipShootRTRight.png-8f2aa50149518af3d1be7fff53043ae2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/emptySpace.png"
-dest_files=["res://.godot/imported/emptySpace.png-598e6c9ae7392f21c59cca695bd73ae1.ctex"]
+source_file="res://Art/PlayerArt/playerShipShootRTRight.png"
+dest_files=["res://.godot/imported/playerShipShootRTRight.png-8f2aa50149518af3d1be7fff53043ae2.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwik5xpvedlw6"
-path="res://.godot/imported/cookiePlanet.png-cfcc95b08c18f636e08b91c3cdb0b826.ctex"
+uid="uid://b6qjomjfi0lj0"
+path="res://.godot/imported/playerShipShootRTLeft.png-5c36b6d6722a69519366d62a1ce6aa37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/cookiePlanet.png"
-dest_files=["res://.godot/imported/cookiePlanet.png-cfcc95b08c18f636e08b91c3cdb0b826.ctex"]
+source_file="res://Art/PlayerArt/playerShipShootRTLeft.png"
+dest_files=["res://.godot/imported/playerShipShootRTLeft.png-5c36b6d6722a69519366d62a1ce6aa37.ctex"]
 
 [params]
 

@@ -1,15 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bognv4241kcef"]
+[gd_scene load_steps=11 format=3 uid="uid://bognv4241kcef"]
 
-[ext_resource type="Texture2D" uid="uid://b5ejpia2vbh0h" path="res://Art/credits.png" id="1_i6crj"]
+[ext_resource type="Texture2D" uid="uid://b5ejpia2vbh0h" path="res://Art/MenuArt/credits.png" id="1_e07ga"]
 [ext_resource type="Script" path="res://Scripts/credits.gd" id="2_ie4xh"]
-[ext_resource type="Texture2D" uid="uid://dj260eigv4jow" path="res://Art/titleButton.png" id="3_c63ic"]
-[ext_resource type="Texture2D" uid="uid://cifqhmvg20v0b" path="res://Art/creditsExitButton.png" id="4_dpt5r"]
+[ext_resource type="Texture2D" uid="uid://dj260eigv4jow" path="res://Art/MenuArt/titleButton.png" id="3_u557r"]
+[ext_resource type="Texture2D" uid="uid://cifqhmvg20v0b" path="res://Art/MenuArt/creditsExitButton.png" id="4_liwgi"]
+[ext_resource type="Texture2D" uid="uid://52f83boalifg" path="res://Art/MenuArt/titleButtonPressed.png" id="4_wsgeu"]
+[ext_resource type="Texture2D" uid="uid://cquyf2huqror3" path="res://Art/MenuArt/titleButtonHover.png" id="5_cvous"]
+[ext_resource type="AudioStream" uid="uid://1xc1g8woedc1" path="res://Sound/Music/plh_orbitaloopsynthtest.mp3" id="5_i5gy5"]
+[ext_resource type="Texture2D" uid="uid://bthqclwv0dkms" path="res://Art/MenuArt/exitButtonPressed.png" id="7_uvcki"]
+[ext_resource type="Texture2D" uid="uid://0fet1tqnbfmh" path="res://Art/MenuArt/exitButtonHover.png" id="8_oeqmo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6knwu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_i6crj")
+"texture": ExtResource("1_e07ga")
 }],
 "loop": true,
 "name": &"default",
@@ -30,7 +35,9 @@ offset_top = -221.0
 offset_right = -112.0
 offset_bottom = -173.0
 grow_vertical = 0
-texture_normal = ExtResource("3_c63ic")
+texture_normal = ExtResource("3_u557r")
+texture_pressed = ExtResource("4_wsgeu")
+texture_hover = ExtResource("5_cvous")
 
 [node name="ExitButton" type="TextureButton" parent="."]
 anchors_preset = 3
@@ -44,7 +51,14 @@ offset_right = -272.0
 offset_bottom = -173.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("4_dpt5r")
+texture_normal = ExtResource("4_liwgi")
+texture_pressed = ExtResource("7_uvcki")
+texture_hover = ExtResource("8_oeqmo")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i5gy5")
+volume_db = -15.314
+autoplay = true
 
 [connection signal="pressed" from="TitleButton" to="." method="_on_title_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

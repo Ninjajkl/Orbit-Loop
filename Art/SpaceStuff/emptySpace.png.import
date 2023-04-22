@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdl3hdw4epcru"
-path="res://.godot/imported/creditsButton.png-f62ef6f94b468aa82a2fb5d60fbd7996.ctex"
+uid="uid://xw3w0q60q6l6"
+path="res://.godot/imported/emptySpace.png-ec4306c30a7fedb7fa5393692c4a3854.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/creditsButton.png"
-dest_files=["res://.godot/imported/creditsButton.png-f62ef6f94b468aa82a2fb5d60fbd7996.ctex"]
+source_file="res://Art/SpaceStuff/emptySpace.png"
+dest_files=["res://.godot/imported/emptySpace.png-ec4306c30a7fedb7fa5393692c4a3854.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj260eigv4jow"
-path="res://.godot/imported/titleButton.png-4af8d0cef98f47e5018e69be51241ace.ctex"
+uid="uid://tprs87ho83rf"
+path="res://.godot/imported/joey_jumpscare.png-a56a89718864dda3bf483f5a43fc491c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/titleButton.png"
-dest_files=["res://.godot/imported/titleButton.png-4af8d0cef98f47e5018e69be51241ace.ctex"]
+source_file="res://Art/EnemyArt/joey_jumpscare.png"
+dest_files=["res://.godot/imported/joey_jumpscare.png-a56a89718864dda3bf483f5a43fc491c.ctex"]
 
 [params]
 

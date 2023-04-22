@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btxforxikevva"
-path="res://.godot/imported/plh_playerRotateRight.png-4ef95189ea9e879c2428987c1257f2c2.ctex"
+uid="uid://cifqhmvg20v0b"
+path="res://.godot/imported/creditsExitButton.png-8c72b6710d3702fb54659abdad0f6828.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/plh_playerRotateRight.png"
-dest_files=["res://.godot/imported/plh_playerRotateRight.png-4ef95189ea9e879c2428987c1257f2c2.ctex"]
+source_file="res://Art/MenuArt/creditsExitButton.png"
+dest_files=["res://.godot/imported/creditsExitButton.png-8c72b6710d3702fb54659abdad0f6828.ctex"]
 
 [params]
 

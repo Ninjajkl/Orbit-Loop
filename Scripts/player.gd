@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var rotation_speed = 3
 @export var bullet_speed = 3
 @export var bullet_scene: PackedScene
+@export var shooting_speed : float = 0.5
+var shooting_cooldown = 0;
 
 var PlayerAnim: AnimatedSprite2D
 var prevAnim = "idle"
@@ -16,15 +18,27 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var nextAnim = "idle"
+	shooting_cooldown+=delta
+	
+	#Inputs
 	if(Input.is_action_pressed("ui_right")):
 		rotation += rotation_speed * delta
 		nextAnim = "turnRight"
 	elif(Input.is_action_pressed("ui_left")):
 		rotation -= rotation_speed*1.5 * delta
 		nextAnim = "turnLeft"
-	if(Input.is_action_just_pressed("ui_space")):
-		shoot()
-		nextAnim = "shoot"
+	if(Input.is_action_pressed("ui_space")):
+		match nextAnim:
+			"turnRight":
+				nextAnim = "turnShootRight"
+			"turnLeft":
+				nextAnim = "turnShootLeft"
+			_:
+				nextAnim = "shoot"
+		if (shooting_cooldown >= shooting_speed):
+			shoot()
+			shooting_cooldown = 0
+	#Anim
 	if(prevAnim!=nextAnim):
 		PlayerAnim.set_animation(nextAnim)
 		prevAnim=nextAnim

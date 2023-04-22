@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da6paaq25kiq3"
-path="res://.godot/imported/plh_playerRotateLeft.png-b5e3b055c8a912cee256305d28aec559.ctex"
+uid="uid://cquyf2huqror3"
+path="res://.godot/imported/titleButtonHover.png-90f7bc03c753d5605840ec5cbb07f854.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/plh_playerRotateLeft.png"
-dest_files=["res://.godot/imported/plh_playerRotateLeft.png-b5e3b055c8a912cee256305d28aec559.ctex"]
+source_file="res://Art/MenuArt/titleButtonHover.png"
+dest_files=["res://.godot/imported/titleButtonHover.png-90f7bc03c753d5605840ec5cbb07f854.ctex"]
 
 [params]
 
