@@ -52,6 +52,5 @@ func moveCowPlanet(delta):
 		cowPlanet.z_index = 1
 	else:
 		cowPlanet.z_index = 0
-	cowPlanet.scale.x = (1-cos(cowProgress))/2
+	cowPlanet.scale.x = (1.5-cos(cowProgress)/2)/2
 	cowPlanet.scale.y = cowPlanet.scale.x
-	print(cos(cowProgress))
