@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkhrg144tglar"]
+
+[ext_resource type="Texture2D" uid="uid://xw3w0q60q6l6" path="res://Art/emptySpace.png" id="1_l8lnu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2g7d2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l8lnu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="title" type="AnimatedSprite2D"]
+position = Vector2(240, 135)
+sprite_frames = SubResource("SpriteFrames_2g7d2")

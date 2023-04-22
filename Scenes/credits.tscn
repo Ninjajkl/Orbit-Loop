@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bognv4241kcef"]
+[gd_scene load_steps=5 format=3 uid="uid://bognv4241kcef"]
 
 [ext_resource type="Texture2D" uid="uid://b5ejpia2vbh0h" path="res://Art/credits.png" id="1_i6crj"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="2_ie4xh"]
+[ext_resource type="Texture2D" uid="uid://d30w01xiclanx" path="res://Art/plh_grey.png" id="2_rxhqs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6knwu"]
 animations = [{
@@ -16,3 +18,32 @@ animations = [{
 [node name="Credits" type="AnimatedSprite2D"]
 position = Vector2(240, 135)
 sprite_frames = SubResource("SpriteFrames_6knwu")
+script = ExtResource("2_ie4xh")
+
+[node name="TitleButton" type="TextureButton" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -221.0
+offset_right = -112.0
+offset_bottom = -173.0
+grow_vertical = 0
+texture_normal = ExtResource("2_rxhqs")
+
+[node name="ExitButton" type="TextureButton" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -368.0
+offset_top = -221.0
+offset_right = -272.0
+offset_bottom = -173.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("2_rxhqs")
+
+[connection signal="pressed" from="TitleButton" to="." method="_on_title_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
