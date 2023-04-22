@@ -1,36 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://b08dwjbus1dsk"]
+[gd_scene load_steps=5 format=3 uid="uid://b08dwjbus1dsk"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_egcwd"]
-[ext_resource type="Texture2D" uid="uid://p5fjaheh4bl3" path="res://icon.svg" id="3_jiqhv"]
-[ext_resource type="Texture2D" uid="uid://cso1ktne24v2i" path="res://Art/plh_meteoroid.png" id="3_ot8cc"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7pqa7"]
-atlas = ExtResource("3_ot8cc")
-region = Rect2(0, 0, 270, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tl0xy"]
-atlas = ExtResource("3_ot8cc")
-region = Rect2(270, 0, 270, 270)
+[ext_resource type="Texture2D" uid="uid://bym7uc5ghkq56" path="res://Art/EnemyArt/alioon.png" id="2_uru45"]
+[ext_resource type="Texture2D" uid="uid://byymchbjxu0wi" path="res://Art/EnemyArt/meteor.png" id="3_7jwyn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flgqn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_jiqhv")
-}, {
-"duration": 2.0,
-"texture": null
+"texture": ExtResource("2_uru45")
 }],
 "loop": true,
 "name": &"alien",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_7pqa7")
-}, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tl0xy")
+"texture": ExtResource("3_7jwyn")
 }],
 "loop": true,
 "name": &"meteoroid",
@@ -38,20 +24,20 @@ animations = [{
 }]
 
 [node name="Enemy" type="RigidBody2D"]
+disable_mode = 2
 collision_layer = 2
 collision_mask = 2
-max_contacts_reported = 100
 contact_monitor = true
 script = ExtResource("1_egcwd")
-metadata/_edit_group_ = true
 
 [node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_flgqn")
-animation = &"meteoroid"
+animation = &"alien"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(11, 11, 11, -11, -11, -11, -11, 11)
+visible = false
+polygon = PackedVector2Array(8, 8, 0, -8, -8, 8)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

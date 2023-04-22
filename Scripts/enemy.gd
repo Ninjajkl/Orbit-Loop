@@ -17,7 +17,7 @@ func _ready():
 	#Set the ramdom enemy type
 	enemy_type = enemy_types.keys()[randi() % enemy_types.size()]
 	#Get the player instance
-	player = get_node("../PlayerPivot/Player")
+	player = get_node("../../NotBackground/PlayerPivot/Player")
 	#Play the animation based on enemy type
 	$EnemyAnimation.play(enemy_type)
 	#Start facing the enemy (only really for non sentient enemies)
@@ -57,5 +57,5 @@ func fire():
 	
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	get_parent().enemy_killed(0)
+	get_parent().get_parent().enemy_killed(0)
 	queue_free()

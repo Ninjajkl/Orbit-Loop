@@ -13,7 +13,7 @@ var spawn_location
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spawn_location = get_node("SpawnPath/MovingSpawnLocation")  
+	spawn_location = get_node("NotBackground/SpawnPath/MovingSpawnLocation")  
 
 
 # Called every physics frame.
@@ -30,7 +30,7 @@ func spawn_enemy():
 	var enemy_instance = enemy.instantiate()
 	spawn_location.progress_ratio = randf()
 	enemy_instance.position = spawn_location.position
-	add_child(enemy_instance)
+	get_node("NotBackground").add_child(enemy_instance)
 	current_enemy_count += 1
 
 #Method that should be called when enemy is killed
