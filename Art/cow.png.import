@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimtv5eqrm8ss"
-path="res://.godot/imported/plh_blackground.png-54a6040c8172e0303f53721af0111445.ctex"
+uid="uid://372pe2jf7fe0"
+path="res://.godot/imported/cow.png-5eb07203cffa0eb8d981c08248c953be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/plh_blackground.png"
-dest_files=["res://.godot/imported/plh_blackground.png-54a6040c8172e0303f53721af0111445.ctex"]
+source_file="res://Art/cow.png"
+dest_files=["res://.godot/imported/cow.png-5eb07203cffa0eb8d981c08248c953be.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

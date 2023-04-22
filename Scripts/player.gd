@@ -19,10 +19,15 @@ func _process(delta):
 		shoot()
 
 func shoot():
-	var bullet = bullet_scene.instantiate()
-	
-	bullet.rotation = rotation
-	bullet.position = position
-	bullet.set_linear_velocity(Vector2(bullet_speed,0.0).rotated(get_parent().rotation+rotation-1.570796))
-	
-	get_parent().add_child(bullet)
+	for i in range(0,2):
+		var bullet = bullet_scene.instantiate()
+		
+		bullet.rotation = rotation
+		bullet.position = position
+		if(i == 0):
+			bullet.position.x+=5*sin(rotation-PI/2)
+		else:
+			bullet.position.x-=5*sin(rotation-PI/2)
+		bullet.set_linear_velocity(Vector2(bullet_speed,0.0).rotated(global_rotation-PI/2))
+		print(rotation)
+		get_parent().add_child(bullet)

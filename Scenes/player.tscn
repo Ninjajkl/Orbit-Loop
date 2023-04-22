@@ -24,7 +24,7 @@ metadata/_edit_group_ = true
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_flgqn")
-frame_progress = 0.451379
+frame_progress = 0.0506687
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
