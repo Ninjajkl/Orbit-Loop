@@ -5,7 +5,7 @@ extends RigidBody2D
 enum enemy_types {meteoroid,alien} 
 var enemy_type: String
 
-@export var shooting_speed : int = 120
+@export var shooting_speed : int = 60
 var shooting_cooldown = 0;
 var bullet:PackedScene = preload("res://Scenes/bullet.tscn")
 
@@ -50,10 +50,12 @@ func fire():
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.rotation = rotation
 	bullet_instance.position = position
-	bullet_instance.set_linear_velocity(Vector2(movement_speed*4,0.0).rotated(rotation))
+	bullet_instance.position.x-=20*sin(rotation-PI/2)
+	bullet_instance.position.y+=20*cos(rotation-PI/2)
+	bullet_instance.set_linear_velocity(Vector2(movement_speed*6,0.0).rotated(rotation))
 	get_parent().add_child(bullet_instance)
 	
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	get_parent().enemy_killed(1)
+	get_parent().enemy_killed(0)
 	queue_free()
