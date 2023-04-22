@@ -44,7 +44,13 @@ func enemy_killed(score_increase : int):
 	current_enemy_count -= 1
 	score += score_increase
 	#TODO increase difficulty here
-
+	
+func gameover():
+	var scene = preload("res://Scenes/title.tscn").instantiate()
+	scene._game_restarted(score)
+	get_tree().root.add_child(scene)
+	self.queue_free()
+	
 func moveCowPlanet(delta):
 	cowProgress+=delta/10
 	cowPlanet.position.x-=cos(cowProgress)*0.15
