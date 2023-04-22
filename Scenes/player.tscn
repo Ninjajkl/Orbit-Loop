@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc6ib7iqvvde3"]
+[gd_scene load_steps=8 format=3 uid="uid://cc6ib7iqvvde3"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_gh8t3"]
 [ext_resource type="PackedScene" uid="uid://bduo7wyk81nqd" path="res://Scenes/bullet.tscn" id="2_8xgty"]
 [ext_resource type="Texture2D" uid="uid://dma3coooy7vpp" path="res://Art/player.png" id="3_3udw1"]
+[ext_resource type="Texture2D" uid="uid://cv63cu8xx5x" path="res://Art/playerTempShoot.png" id="4_eiq02"]
+[ext_resource type="Texture2D" uid="uid://da6paaq25kiq3" path="res://Art/plh_playerRotateLeft.png" id="5_gh2lm"]
+[ext_resource type="Texture2D" uid="uid://btxforxikevva" path="res://Art/plh_playerRotateRight.png" id="6_yqj6y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flgqn"]
 animations = [{
@@ -11,7 +14,31 @@ animations = [{
 "texture": ExtResource("3_3udw1")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_eiq02")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_gh2lm")
+}],
+"loop": true,
+"name": &"turnLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yqj6y")
+}],
+"loop": true,
+"name": &"turnRight",
 "speed": 5.0
 }]
 
@@ -25,7 +52,7 @@ metadata/_edit_group_ = true
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_flgqn")
-frame_progress = 0.0506687
+animation = &"shoot"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false

@@ -6,7 +6,7 @@ var score = 0
 var spawn_speed : int = 10
 var spawn_cooldown = 1
 
-var enemy = preload("res://Scenes/Enemy.tscn")
+var enemy = preload("res://Scenes/enemy.tscn")
 @export var max_enemy : int = 20
 var current_enemy_count : int = 0
 var spawn_location
@@ -17,7 +17,7 @@ func _ready():
 
 
 # Called every physics frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if (current_enemy_count < max_enemy && spawn_cooldown >= spawn_speed):
 		spawn_enemy()
 		spawn_cooldown = 1
