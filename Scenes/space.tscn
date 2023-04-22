@@ -39,8 +39,7 @@ position = Vector2(240, 135)
 sprite_frames = SubResource("SpriteFrames_mejof")
 
 [node name="Cow" type="Sprite2D" parent="Background"]
-z_index = 2
-position = Vector2(200, 135)
+position = Vector2(240, 135)
 texture = ExtResource("3_w58wn")
 
 [node name="Purpleorb" type="Sprite2D" parent="Background"]

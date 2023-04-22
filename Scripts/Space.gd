@@ -11,13 +11,19 @@ var enemy = preload("res://Scenes/enemy.tscn")
 var current_enemy_count : int = 0
 var spawn_location
 
+#cowPlanetVariables
+var cowPlanet : Sprite2D
+var cowProgress : float = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_location = get_node("NotBackground/SpawnPath/MovingSpawnLocation")  
+	cowPlanet = get_node("Background/Cow")
 
 
 # Called every physics frame.
 func _physics_process(_delta):
+	moveCowPlanet(_delta)
 	if (spawn_cooldown >= spawn_speed):
 		if (current_enemy_count < max_enemy):
 			spawn_enemy()
@@ -38,3 +44,14 @@ func enemy_killed(score_increase : int):
 	current_enemy_count -= 1
 	score += score_increase
 	#TODO increase difficulty here
+
+func moveCowPlanet(delta):
+	cowProgress+=delta/10
+	cowPlanet.position.x-=cos(cowProgress)*0.15
+	if(cos(cowProgress)<0):
+		cowPlanet.z_index = 1
+	else:
+		cowPlanet.z_index = 0
+	cowPlanet.scale.x = (1-cos(cowProgress))/2
+	cowPlanet.scale.y = cowPlanet.scale.x
+	print(cos(cowProgress))
