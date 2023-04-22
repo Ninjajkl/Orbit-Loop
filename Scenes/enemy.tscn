@@ -42,10 +42,9 @@ script = ExtResource("1_4exmt")
 metadata/_edit_group_ = true
 
 [node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_flgqn")
-animation = &"meteoroid"
-frame_progress = 0.0928347
+animation = &"alien"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false

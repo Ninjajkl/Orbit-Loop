@@ -18,18 +18,18 @@ func _ready():
 	#Get the player instance
 	player = get_node("../PlayerPivot/Player")
 	#Play the animation based on enemy type
-	$EnemyAnimation.play(str(enemy_type))
-	#If enemy type is meteoriod give it linear
-	if(enemy_type == "meteoroid"):
-		look_at(player.global_position)
-		#move_and_collide(movement_speed)
+	$EnemyAnimation.play(enemy_type)
+	#Start facing the enemy (only really for non sentient enemies)
+	look_at(player.global_position)
+		
 
 # Called every physics frame. 60 frames per second by default.
 func _physics_process(delta):
 	match enemy_type:
-		enemy_types.alien:
+		"alien":
 			sentient_enemy(delta)
-		
+		"meteoroid":
+			position += transform.x * movement_speed * delta
 
 #Movement code for enemy targeting player
 func sentient_enemy(delta):
@@ -39,11 +39,10 @@ func sentient_enemy(delta):
 		shooting_cooldown = 0
 	else:
 		shooting_cooldown+=1
-	
+	var velocity = global_position.direction_to(player.global_position)
 	#Look at player
 	look_at(player.global_position)
-	#Move towards player
-	var velocity = global_position.direction_to(player.global_position)
+	#Move
 	move_and_collide(velocity * movement_speed * delta)
 
 #Create and give bullet movement
@@ -51,7 +50,7 @@ func fire():
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.rotation = rotation
 	bullet_instance.position = position
-	bullet_instance.set_linear_velocity(Vector2(movement_speed*2,0.0).rotated(rotation))
+	bullet_instance.set_linear_velocity(Vector2(movement_speed*4,0.0).rotated(rotation))
 	get_parent().add_child(bullet_instance)
 	
 	
