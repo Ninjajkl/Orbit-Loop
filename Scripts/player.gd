@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var bullet_speed = 3
 @export var bullet_scene: PackedScene
 @export var shooting_speed : float = 0.5
+@export var health = 100
+@export var shooting_angle : float = 0.5
+
 var shooting_cooldown = 0;
 
 var PlayerAnim: AnimatedSprite2D
@@ -47,13 +50,21 @@ func shoot():
 	for i in range(0,2):
 		var bullet = bullet_scene.instantiate()
 		
-		bullet.rotation = rotation
 		bullet.position = position
+		bullet.set_collision_layer(0)
+		bullet.set_collision_mask(pow(2,2-1)+pow(2,3-1))
 		if(i == 0):
 			bullet.position.x+=10*sin(rotation-PI/2)
 			bullet.position.y-=10*cos(rotation-PI/2)
+			bullet.set_linear_velocity(Vector2(bullet_speed,0.0).rotated(global_rotation-PI/2+shooting_angle))
 		else:
 			bullet.position.x-=10*sin(rotation-PI/2)
 			bullet.position.y+=10*cos(rotation-PI/2)
-		bullet.set_linear_velocity(Vector2(bullet_speed,0.0).rotated(global_rotation-PI/2))
+			bullet.set_linear_velocity(Vector2(bullet_speed,0.0).rotated(global_rotation-PI/2-shooting_angle))
+		#bullet.set_linear_velocity(Vector2(bullet_speed,0.0).rotated(global_rotation-PI/2))
 		get_parent().add_child(bullet)
+
+func gotHit():
+	health-=1
+	if(health <= 0):
+		get_tree().current_scene.gameover() 

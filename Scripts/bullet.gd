@@ -5,7 +5,12 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_body_entered(body):
-	if (body.name == "Enemy"):
-		get_parent().enemy_killed(1)
-	body.queue_free()
-	queue_free()
+	if (body.is_in_group("Enemy")):
+		get_tree().get_root().get_node("Space").enemy_killed(1)
+		body.queue_free()
+		queue_free()
+	elif (body.is_in_group("Player")):
+		body.gotHit()
+		queue_free()
+	elif (body.is_in_group("Bullet")):
+		body.queue_free()

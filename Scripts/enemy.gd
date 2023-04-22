@@ -29,7 +29,8 @@ func _physics_process(delta):
 		"alien":
 			sentient_enemy(delta)
 		"meteoroid":
-			position += transform.x * movement_speed * delta
+			move_and_collide(transform.x * movement_speed * delta)
+			#position += transform.x * movement_speed * delta
 
 #Movement code for enemy targeting player
 func sentient_enemy(delta):
@@ -50,6 +51,8 @@ func fire():
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.rotation = rotation
 	bullet_instance.position = position
+	bullet_instance.get_node("Sprite2D").set_modulate(Color(0,1,0,1))
+	bullet_instance.set_collision_mask(pow(2,2-1)+pow(2,1-1))
 	bullet_instance.position.x-=20*sin(rotation-PI/2)
 	bullet_instance.position.y+=20*cos(rotation-PI/2)
 	bullet_instance.set_linear_velocity(Vector2(movement_speed*6,0.0).rotated(rotation))
