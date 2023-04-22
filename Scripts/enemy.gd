@@ -1,16 +1,17 @@
-extends StaticBody2D
+extends RigidBody2D
 
 @export var movement_speed = 10
 
 enum enemy_types {meteoroid,alien} 
 var enemy_type: String
 
-@export var shooting_speed : int = 60
+@export var shooting_speed : int = 120
 var shooting_cooldown = 0;
 var bullet:PackedScene = preload("res://Scenes/bullet.tscn")
 
 var player : CharacterBody2D
 
+signal enemy_dead
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Set the ramdom enemy type
@@ -20,8 +21,7 @@ func _ready():
 	#Play the animation based on enemy type
 	$EnemyAnimation.play(enemy_type)
 	#Start facing the enemy (only really for non sentient enemies)
-	look_at(player.global_position)
-		
+	look_at(player.global_position)	
 
 # Called every physics frame. 60 frames per second by default.
 func _physics_process(delta):
@@ -53,4 +53,7 @@ func fire():
 	bullet_instance.set_linear_velocity(Vector2(movement_speed*4,0.0).rotated(rotation))
 	get_parent().add_child(bullet_instance)
 	
-	
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	get_parent().enemy_killed(1)
+	queue_free()

@@ -13,13 +13,14 @@ var spawn_location
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spawn_location = get_node("SpawnPath/MovingSpawnLocation")	
+	spawn_location = get_node("SpawnPath/MovingSpawnLocation")  
 
 
 # Called every physics frame.
 func _physics_process(_delta):
-	if (current_enemy_count < max_enemy && spawn_cooldown >= spawn_speed):
-		spawn_enemy()
+	if (spawn_cooldown >= spawn_speed):
+		if (current_enemy_count < max_enemy):
+			spawn_enemy()
 		spawn_cooldown = 1
 	else:
 		spawn_cooldown += 1
