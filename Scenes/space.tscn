@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyvlktvvrpcc0"]
+[gd_scene load_steps=8 format=3 uid="uid://cavrayjpptu48"]
 
+[ext_resource type="Script" path="res://Scripts/Space.gd" id="1_b45tk"]
 [ext_resource type="Texture2D" uid="uid://cimtv5eqrm8ss" path="res://Art/plh_blackground.png" id="1_nqmu3"]
 [ext_resource type="PackedScene" uid="uid://cc6ib7iqvvde3" path="res://Scenes/player.tscn" id="2_1u2xv"]
 [ext_resource type="Script" path="res://Scripts/orbiter.gd" id="2_3et06"]
@@ -16,7 +17,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve2D" id="Curve2D_4cdl5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -35, -35, 0, 0, 0, 0, 515, -35, 0, 0, 0, 0, 515, 305, 0, 0, 0, 0, -35, 305, 0, 0, 0, 0, -35, -35)
+}
+point_count = 5
+
 [node name="Space" type="Node"]
+script = ExtResource("1_b45tk")
 
 [node name="Background" type="Node" parent="."]
 
@@ -34,3 +42,9 @@ script = ExtResource("2_3et06")
 
 [node name="Player" parent="PlayerPivot" instance=ExtResource("2_1u2xv")]
 position = Vector2(0, -71)
+
+[node name="SpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4cdl5")
+
+[node name="MovingSpawnLocation" type="PathFollow2D" parent="SpawnPath"]
+position = Vector2(-35, -35)

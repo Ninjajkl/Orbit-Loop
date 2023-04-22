@@ -1,16 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bypq336c6lrge"]
+[gd_scene load_steps=7 format=3 uid="uid://c3gf37gqax8vo"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_kr7jf"]
-[ext_resource type="Texture2D" uid="uid://bovhyhpciijbo" path="res://Art/plh_player.png" id="2_3iaux"]
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_4exmt"]
 [ext_resource type="Texture2D" uid="uid://p5fjaheh4bl3" path="res://icon.svg" id="3_jiqhv"]
+[ext_resource type="Texture2D" uid="uid://cso1ktne24v2i" path="res://Art/plh_meteoroid.png" id="3_ot8cc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gcd7y"]
-atlas = ExtResource("2_3iaux")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pqa7"]
+atlas = ExtResource("3_ot8cc")
+region = Rect2(0, 0, 270, 270)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5qpcj"]
-atlas = ExtResource("2_3iaux")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl0xy"]
+atlas = ExtResource("3_ot8cc")
+region = Rect2(270, 0, 270, 270)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flgqn"]
 animations = [{
@@ -26,11 +26,11 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gcd7y")
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_7pqa7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5qpcj")
+"texture": SubResource("AtlasTexture_tl0xy")
 }],
 "loop": true,
 "name": &"meteoroid",
@@ -38,13 +38,14 @@ animations = [{
 }]
 
 [node name="Enemy" type="StaticBody2D"]
-script = ExtResource("1_kr7jf")
-enemy_type = "meteoroid"
+script = ExtResource("1_4exmt")
 metadata/_edit_group_ = true
 
 [node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_flgqn")
-animation = &"alien"
+animation = &"meteoroid"
+frame_progress = 0.0928347
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
