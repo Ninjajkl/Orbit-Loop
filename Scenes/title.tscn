@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkhrg144tglar"]
+[gd_scene load_steps=5 format=3 uid="uid://bkhrg144tglar"]
 
 [ext_resource type="Texture2D" uid="uid://xw3w0q60q6l6" path="res://Art/emptySpace.png" id="1_l8lnu"]
+[ext_resource type="Script" path="res://Scripts/title.gd" id="2_gubpg"]
+[ext_resource type="Texture2D" uid="uid://d30w01xiclanx" path="res://Art/plh_grey.png" id="2_ttkpm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2g7d2"]
 animations = [{
@@ -16,3 +18,49 @@ animations = [{
 [node name="title" type="AnimatedSprite2D"]
 position = Vector2(240, 135)
 sprite_frames = SubResource("SpriteFrames_2g7d2")
+script = ExtResource("2_gubpg")
+
+[node name="tempTitle" type="TextureRect" parent="."]
+offset_left = -176.0
+offset_top = -119.0
+offset_right = 176.0
+offset_bottom = 9.0
+texture = ExtResource("2_ttkpm")
+
+[node name="StartButton" type="TextureButton" parent="."]
+offset_left = -48.0
+offset_top = 33.0
+offset_right = 48.0
+offset_bottom = 65.0
+texture_normal = ExtResource("2_ttkpm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CreditsButton" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -54.0
+offset_right = -192.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ttkpm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ExitButton" type="TextureButton" parent="."]
+offset_left = 220.0
+offset_top = -131.0
+offset_right = 236.0
+offset_bottom = -115.0
+texture_normal = ExtResource("2_ttkpm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

@@ -15,7 +15,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Credits" type="AnimatedSprite2D"]
+[node name="credits" type="AnimatedSprite2D"]
 position = Vector2(240, 135)
 sprite_frames = SubResource("SpriteFrames_6knwu")
 script = ExtResource("2_ie4xh")

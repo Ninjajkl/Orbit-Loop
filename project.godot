@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Orbital Loop"
-run/main_scene="res://Scenes/space.tscn"
+run/main_scene="res://Scenes/title.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
