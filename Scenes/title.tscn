@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkhrg144tglar"]
+[gd_scene load_steps=15 format=3 uid="uid://bkhrg144tglar"]
 
 [ext_resource type="Texture2D" uid="uid://xw3w0q60q6l6" path="res://Art/SpaceStuff/emptySpace.png" id="1_bohu1"]
 [ext_resource type="Script" path="res://Scripts/title.gd" id="2_gubpg"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dhdvpqib17ph8" path="res://Art/MenuArt/creditsButtonHover.png" id="6_hm2it"]
 [ext_resource type="Texture2D" uid="uid://d2n37mk820oa2" path="res://Art/MenuArt/smallExitButtonPressed.png" id="8_uu6k4"]
 [ext_resource type="Texture2D" uid="uid://7mq0ax8fsny0" path="res://Art/MenuArt/smallExitButtonHover.png" id="9_qn4kl"]
+[ext_resource type="FontFile" uid="uid://cv05npd8lx052" path="res://Art/BeanFont.ttf" id="13_agdg8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2g7d2"]
 animations = [{
@@ -30,10 +31,10 @@ sprite_frames = SubResource("SpriteFrames_2g7d2")
 script = ExtResource("2_gubpg")
 
 [node name="tempTitle" type="TextureRect" parent="."]
-offset_left = -176.0
-offset_top = -119.0
-offset_right = 176.0
-offset_bottom = 9.0
+offset_left = -174.0
+offset_top = -128.0
+offset_right = 178.0
+size_flags_horizontal = 6
 texture = ExtResource("3_xikwk")
 
 [node name="StartButton" type="TextureButton" parent="."]
@@ -41,6 +42,7 @@ offset_left = -48.0
 offset_top = 27.0
 offset_right = 48.0
 offset_bottom = 75.0
+size_flags_horizontal = 6
 texture_normal = ExtResource("4_7fyi6")
 texture_pressed = ExtResource("5_d04ja")
 texture_hover = ExtResource("6_0m0qh")
@@ -57,6 +59,7 @@ offset_right = -192.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 6
 texture_normal = ExtResource("4_il31i")
 texture_pressed = ExtResource("5_xi3jv")
 texture_hover = ExtResource("6_hm2it")
@@ -66,6 +69,7 @@ offset_left = 220.0
 offset_top = -131.0
 offset_right = 236.0
 offset_bottom = -115.0
+size_flags_horizontal = 6
 texture_normal = ExtResource("5_1hkmy")
 texture_pressed = ExtResource("8_uu6k4")
 texture_hover = ExtResource("9_qn4kl")
@@ -73,26 +77,41 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="GameOverLabel" type="RichTextLabel" parent="."]
+<<<<<<< HEAD
 visible = false
 offset_left = -90.0
 offset_top = 10.0
 offset_right = 91.0
 offset_bottom = 36.0
+=======
+offset_left = -142.0
+offset_top = -2.0
+offset_right = 150.0
+offset_bottom = 34.0
+size_flags_horizontal = 6
+theme_override_fonts/normal_font = ExtResource("13_agdg8")
+theme_override_font_sizes/normal_font_size = 24
+>>>>>>> 187126a976104a7bc3202510e149f4ee5484d70d
 bbcode_enabled = true
 text = "[center]Game Over!! Try Again[/center]"
 
 [node name="LastScoreLabel" type="RichTextLabel" parent="."]
-visible = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -133.0
-offset_top = -163.0
-offset_right = -348.0
-offset_bottom = -134.0
+offset_left = -128.0
+offset_top = -166.0
+offset_right = -343.0
+offset_bottom = -137.0
 grow_horizontal = 2
 grow_vertical = 0
+<<<<<<< HEAD
+=======
+size_flags_horizontal = 6
+theme_override_fonts/normal_font = ExtResource("13_agdg8")
+theme_override_font_sizes/normal_font_size = 24
+>>>>>>> 187126a976104a7bc3202510e149f4ee5484d70d
 bbcode_enabled = true
 text = "<null>"
 
