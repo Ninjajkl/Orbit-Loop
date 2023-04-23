@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bognv4241kcef"]
+[gd_scene load_steps=11 format=3 uid="uid://bognv4241kcef"]
 
 [ext_resource type="Texture2D" uid="uid://b5ejpia2vbh0h" path="res://Art/MenuArt/credits.png" id="1_e07ga"]
 [ext_resource type="Script" path="res://Scripts/credits.gd" id="2_ie4xh"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cquyf2huqror3" path="res://Art/MenuArt/titleButtonHover.png" id="5_cvous"]
 [ext_resource type="Texture2D" uid="uid://bthqclwv0dkms" path="res://Art/MenuArt/exitButtonPressed.png" id="7_uvcki"]
 [ext_resource type="Texture2D" uid="uid://0fet1tqnbfmh" path="res://Art/MenuArt/exitButtonHover.png" id="8_oeqmo"]
+[ext_resource type="AudioStream" uid="uid://cd50ii6cxlo72" path="res://Sound/Music/orbitaloopMenu.ogg" id="9_73vkx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6knwu"]
 animations = [{
@@ -55,6 +56,7 @@ texture_pressed = ExtResource("7_uvcki")
 texture_hover = ExtResource("8_oeqmo")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_73vkx")
 volume_db = -15.0
 autoplay = true
 
