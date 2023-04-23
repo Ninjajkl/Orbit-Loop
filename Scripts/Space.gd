@@ -62,6 +62,5 @@ func moveCowPlanet(delta):
 	cowPlanet.scale.x = (1.5-cos(cowProgress)/2)/2
 	cowPlanet.scale.y = cowPlanet.scale.x
 
-
 func _on_exit_button_pressed():
 	get_tree().quit()
