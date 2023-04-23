@@ -37,7 +37,11 @@ func _process(delta):
 	elif(Input.is_action_pressed("ui_left")):
 		rotation -= rotation_speed*1.5 * delta
 		nextAnim = "turnLeft"
-	if(Input.is_action_pressed("ui_space")):
+	if(Input.is_action_pressed("focus")):
+		look_at(get_global_mouse_position())
+		rotation += 1.57
+		pass
+	if(Input.is_action_pressed("fire")):
 		match nextAnim:
 			"turnRight":
 				nextAnim = "turnShootRight"
