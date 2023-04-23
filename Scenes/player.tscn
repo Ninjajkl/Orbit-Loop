@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_gh8t3"]
 [ext_resource type="PackedScene" uid="uid://bduo7wyk81nqd" path="res://Scenes/bullet.tscn" id="2_8xgty"]
-[ext_resource type="Texture2D" uid="uid://tprs87ho83rf" path="res://Art/EnemyArt/joey_jumpscare.png" id="3_rbwq4"]
+[ext_resource type="Texture2D" uid="uid://c5tc3u6vbtmem" path="res://Art/PlayerArt/shipDestroyed.png" id="3_ev3o6"]
 [ext_resource type="Texture2D" uid="uid://bq73xdlaj1hwv" path="res://Art/PlayerArt/playerShip.png" id="3_w2344"]
 [ext_resource type="Texture2D" uid="uid://ceswmei0wj1o2" path="res://Art/PlayerArt/shipfire.png" id="4_n65uu"]
 [ext_resource type="Texture2D" uid="uid://c1f3sojj425bx" path="res://Art/PlayerArt/playerShipRTLeft.png" id="5_wrw4d"]
@@ -17,7 +17,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_rbwq4")
+"texture": ExtResource("3_ev3o6")
 }],
 "loop": true,
 "name": &"destroyed",
@@ -85,7 +85,7 @@ metadata/_edit_group_ = true
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_flgqn")
-animation = &"idle"
+animation = &"destroyed"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false

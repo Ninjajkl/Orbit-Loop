@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bkhrg144tglar"]
+[gd_scene load_steps=57 format=3 uid="uid://bkhrg144tglar"]
 
 [ext_resource type="Texture2D" uid="uid://xw3w0q60q6l6" path="res://Art/SpaceStuff/emptySpace.png" id="1_bohu1"]
 [ext_resource type="Script" path="res://Scripts/title.gd" id="2_gubpg"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d2n37mk820oa2" path="res://Art/MenuArt/smallExitButtonPressed.png" id="8_uu6k4"]
 [ext_resource type="Texture2D" uid="uid://7mq0ax8fsny0" path="res://Art/MenuArt/smallExitButtonHover.png" id="9_qn4kl"]
 [ext_resource type="FontFile" uid="uid://cv05npd8lx052" path="res://Art/BeanFont.ttf" id="13_tyufd"]
+[ext_resource type="AudioStream" uid="uid://gnlewlvonx3g" path="res://Sound/Music/orbitaloopMenu.ogg" id="14_rem0g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2g7d2"]
 animations = [{
@@ -387,6 +388,11 @@ grow_vertical = 0
 theme_override_fonts/normal_font = ExtResource("13_tyufd")
 bbcode_enabled = true
 text = "<null>"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_rem0g")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]

@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://k2fcs7cre3yy" path="res://Art/MenuArt/plh_smallExitButton.png" id="9_b5pkc"]
 [ext_resource type="Texture2D" uid="uid://d2n37mk820oa2" path="res://Art/MenuArt/smallExitButtonPressed.png" id="10_xw2yv"]
 [ext_resource type="Texture2D" uid="uid://7mq0ax8fsny0" path="res://Art/MenuArt/smallExitButtonHover.png" id="11_gwrcb"]
-[ext_resource type="AudioStream" uid="uid://1xc1g8woedc1" path="res://Sound/Music/plh_orbitaloopsynthtest.mp3" id="13_hm7iu"]
 [ext_resource type="Texture2D" uid="uid://ckui7ha062bmi" path="res://Art/MenuArt/loadFull.png" id="14_dcfdp"]
+[ext_resource type="AudioStream" uid="uid://515lea4kj7hu" path="res://Sound/Music/bitmusic.ogg" id="14_skgak"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mejof"]
 animations = [{
@@ -34,6 +34,7 @@ point_count = 5
 
 [node name="Space" type="Node"]
 script = ExtResource("1_b45tk")
+max_enemy = 50.0
 max_enemy_increase = 0.05
 
 [node name="Background" type="CanvasLayer" parent="."]
@@ -106,7 +107,7 @@ offset_bottom = 20.0
 texture_progress = ExtResource("14_dcfdp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_hm7iu")
+stream = ExtResource("14_skgak")
 volume_db = -15.0
 autoplay = true
 
