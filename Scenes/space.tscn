@@ -28,7 +28,7 @@ animations = [{
 
 [sub_resource type="Curve2D" id="Curve2D_4cdl5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -35, -35, 0, 0, 0, 0, 515, -35, 0, 0, 0, 0, 515, 305, 0, 0, 0, 0, -35, 305, 0, 0, 0, 0, -35, -35)
+"points": PackedVector2Array(0, 0, 0, 0, -25, -25, 0, 0, 0, 0, 505, -25, 0, 0, 0, 0, 505, 295, 0, 0, 0, 0, -25, 295, 0, 0, 0, 0, -25, -25)
 }
 point_count = 5
 
@@ -78,7 +78,7 @@ position = Vector2(0, -71)
 curve = SubResource("Curve2D_4cdl5")
 
 [node name="MovingSpawnLocation" type="PathFollow2D" parent="NotBackground/SpawnPath"]
-position = Vector2(-35, -35)
+position = Vector2(-25, -25)
 
 [node name="ExitButton" type="TextureButton" parent="NotBackground"]
 anchors_preset = 1

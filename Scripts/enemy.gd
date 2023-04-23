@@ -15,7 +15,11 @@ signal enemy_dead
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Set the ramdom enemy type
-	enemy_type = enemy_types.keys()[randi() % enemy_types.size()]
+	if(randi_range(0,2) > 0):
+		enemy_type = "meteoroid"
+		movement_speed = 9
+	else:
+		enemy_type = "alien"
 	#Get the player instance
 	player = get_node("../../NotBackground/PlayerPivot/Player")
 	#Play the animation based on enemy type
