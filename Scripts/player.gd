@@ -69,6 +69,7 @@ func shoot():
 
 func gotHit():
 	health-=1
+	get_node("hitNoise").play()
 	if(health == 0):
 		dead=true
 		get_node("deathNoise").play()

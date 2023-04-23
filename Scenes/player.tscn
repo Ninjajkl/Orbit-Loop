@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cc6ib7iqvvde3"]
+[gd_scene load_steps=14 format=3 uid="uid://cc6ib7iqvvde3"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_gh8t3"]
 [ext_resource type="PackedScene" uid="uid://bduo7wyk81nqd" path="res://Scenes/bullet.tscn" id="2_8xgty"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c1mqixeblbf8x" path="res://Art/PlayerArt/playerShipShootRTRight.png" id="8_qcqqi"]
 [ext_resource type="AudioStream" uid="uid://cf35iy6k5icyg" path="res://Sound/SoundEffects/gunsound.ogg" id="9_it674"]
 [ext_resource type="AudioStream" uid="uid://cxibc2lxsshtk" path="res://Sound/SoundEffects/playerdie.ogg" id="10_64atl"]
+[ext_resource type="AudioStream" uid="uid://x6dro5y6xygo" path="res://Sound/SoundEffects/playergothit.ogg" id="12_b6dxn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flgqn"]
 animations = [{
@@ -84,7 +85,7 @@ metadata/_edit_group_ = true
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_flgqn")
-animation = &"destroyed"
+animation = &"idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
@@ -96,5 +97,9 @@ volume_db = -15.0
 
 [node name="deathNoise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_64atl")
+
+[node name="hitNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_b6dxn")
+volume_db = -10.0
 
 [connection signal="finished" from="deathNoise" to="." method="_on_death_noise_finished"]
