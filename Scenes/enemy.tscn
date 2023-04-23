@@ -55,7 +55,8 @@ animations = [{
 [node name="Enemy" type="RigidBody2D" groups=["Enemy"]]
 disable_mode = 2
 collision_layer = 4
-collision_mask = 4
+collision_mask = 5
+max_contacts_reported = 10
 contact_monitor = true
 script = ExtResource("1_egcwd")
 
@@ -78,5 +79,6 @@ volume_db = -23.0
 stream = ExtResource("4_blqyt")
 volume_db = -20.0
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="finished" from="deathPlayer" to="." method="_on_death_player_finished"]

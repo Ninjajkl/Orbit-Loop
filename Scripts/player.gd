@@ -71,14 +71,15 @@ func shoot():
 		get_parent().add_child(bullet)
 		get_node("shootNoise").play()
 
-func gotHit():
-	health-=1
-	healthBar.set_value(health)
-	get_node("hitNoise").play()
-	if(health == 0):
-		dead=true
-		get_node("deathNoise").play()
-		PlayerAnim.set_animation("destroyed")
+func gotHit(amount):
+	if(!dead):
+		health = max(0,health-amount)
+		healthBar.set_value(health)
+		get_node("hitNoise").play()
+		if(health == 0):
+			dead=true
+			get_node("deathNoise").play()
+			PlayerAnim.set_animation("destroyed")
 
 func _on_death_noise_finished():
 	get_tree().current_scene.gameover() 

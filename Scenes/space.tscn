@@ -95,8 +95,6 @@ texture_hover = ExtResource("11_gwrcb")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="NotBackground"]
-
 [node name="GUI" type="CanvasLayer" parent="."]
 layer = 3
 

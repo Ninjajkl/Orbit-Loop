@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/plh_orbitaloopsynthtest.mp3-89c26113065cc0b22
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

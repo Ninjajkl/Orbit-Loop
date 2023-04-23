@@ -10,7 +10,7 @@ func _on_body_entered(body):
 		body.died()
 		queue_free()
 	elif (body.is_in_group("Player")):
-		body.gotHit()
+		body.gotHit(1)
 		queue_free()
 	elif (body.is_in_group("Bullet")):
 		body.queue_free()
