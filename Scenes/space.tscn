@@ -34,6 +34,7 @@ point_count = 5
 
 [node name="Space" type="Node"]
 script = ExtResource("1_b45tk")
+max_enemy_increase = 0.05
 
 [node name="Background" type="CanvasLayer" parent="."]
 

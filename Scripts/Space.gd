@@ -7,7 +7,8 @@ var spawn_speed : int = 10
 var spawn_cooldown = 1
 
 var enemy = preload("res://Scenes/enemy.tscn")
-@export var max_enemy : int = 2
+@export var max_enemy : float = 2.0
+@export var max_enemy_increase : float = 0.5
 var current_enemy_count : int = 0
 var spawn_location
 
@@ -43,7 +44,7 @@ func spawn_enemy():
 func enemy_killed(score_increase : int):
 	current_enemy_count -= 1
 	score += score_increase
-	max_enemy += 1
+	max_enemy += max_enemy_increase
 	
 func gameover():
 	var scene = preload("res://Scenes/title.tscn").instantiate()
