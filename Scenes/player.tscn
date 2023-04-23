@@ -1,16 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc6ib7iqvvde3"]
+[gd_scene load_steps=13 format=3 uid="uid://cc6ib7iqvvde3"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_gh8t3"]
 [ext_resource type="PackedScene" uid="uid://bduo7wyk81nqd" path="res://Scenes/bullet.tscn" id="2_8xgty"]
+[ext_resource type="Texture2D" uid="uid://tprs87ho83rf" path="res://Art/EnemyArt/joey_jumpscare.png" id="3_rbwq4"]
 [ext_resource type="Texture2D" uid="uid://bq73xdlaj1hwv" path="res://Art/PlayerArt/playerShip.png" id="3_w2344"]
 [ext_resource type="Texture2D" uid="uid://ceswmei0wj1o2" path="res://Art/PlayerArt/shipfire.png" id="4_n65uu"]
 [ext_resource type="Texture2D" uid="uid://c1f3sojj425bx" path="res://Art/PlayerArt/playerShipRTLeft.png" id="5_wrw4d"]
 [ext_resource type="Texture2D" uid="uid://d3h2yiy5mep2j" path="res://Art/PlayerArt/playerShipRTRight.png" id="6_27b5n"]
 [ext_resource type="Texture2D" uid="uid://b6qjomjfi0lj0" path="res://Art/PlayerArt/playerShipShootRTLeft.png" id="7_e5042"]
 [ext_resource type="Texture2D" uid="uid://c1mqixeblbf8x" path="res://Art/PlayerArt/playerShipShootRTRight.png" id="8_qcqqi"]
+[ext_resource type="AudioStream" uid="uid://cf35iy6k5icyg" path="res://Sound/SoundEffects/gunsound.ogg" id="9_it674"]
+[ext_resource type="AudioStream" uid="uid://cxibc2lxsshtk" path="res://Sound/SoundEffects/playerdie.ogg" id="10_64atl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flgqn"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rbwq4")
+}],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_w2344")
@@ -73,8 +84,17 @@ metadata/_edit_group_ = true
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_flgqn")
-animation = &"turnShootLeft"
+animation = &"destroyed"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
 polygon = PackedVector2Array(8, 8, 0, -8, -8, 8)
+
+[node name="shootNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_it674")
+volume_db = -15.0
+
+[node name="deathNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_64atl")
+
+[connection signal="finished" from="deathNoise" to="." method="_on_death_noise_finished"]

@@ -48,6 +48,7 @@ func sentient_enemy(delta):
 
 #Create and give bullet movement
 func fire():
+	
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.rotation = rotation
 	bullet_instance.position = position
@@ -57,8 +58,31 @@ func fire():
 	bullet_instance.position.y+=20*cos(rotation-PI/2)
 	bullet_instance.set_linear_velocity(Vector2(movement_speed*6,0.0).rotated(rotation))
 	get_parent().add_child(bullet_instance)
+	get_node("shootPlayer").play()
 	
+func died():
+	
+	if(!get_node("deathPlayer").is_playing()):
+		set_collision_layer(0)
+		set_collision_mask(0)
+		shooting_cooldown = -100
+		match enemy_type:
+			"alien":
+				get_node("deathPlayer").set_stream(load("res://Sound/SoundEffects/enemyboom.ogg"))
+				randomize()
+				if(randi()%50==10):
+					get_node("EnemyAnimation").set_animation("joeyDied")
+				else:
+					get_node("EnemyAnimation").set_animation("alienDied")
+				
+			"meteoroid":
+				get_node("deathPlayer").set_stream(load("res://Sound/SoundEffects/meteoroidboom.ogg"))
+				get_node("EnemyAnimation").set_animation("meteroroidDied")
+		get_node("deathPlayer").play()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	get_parent().get_parent().enemy_killed(0)
+	queue_free()
+
+func _on_death_player_finished():
 	queue_free()

@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var shooting_angle : float = 0.5
 
 var shooting_cooldown = 0;
+var dead = false
 
 var PlayerAnim: AnimatedSprite2D
 var prevAnim = "idle"
@@ -20,6 +21,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if dead:
+		return
 	var nextAnim = "idle"
 	shooting_cooldown+=delta
 	
@@ -61,10 +64,15 @@ func shoot():
 			bullet.position.x-=10*sin(rotation-PI/2)
 			bullet.position.y+=10*cos(rotation-PI/2)
 			bullet.set_linear_velocity(Vector2(bullet_speed,0.0).rotated(global_rotation-PI/2-shooting_angle))
-		#bullet.set_linear_velocity(Vector2(bullet_speed,0.0).rotated(global_rotation-PI/2))
 		get_parent().add_child(bullet)
+		get_node("shootNoise").play()
 
 func gotHit():
 	health-=1
-	if(health <= 0):
-		get_tree().current_scene.gameover() 
+	if(health == 0):
+		dead=true
+		get_node("deathNoise").play()
+		PlayerAnim.set_animation("destroyed")
+
+func _on_death_noise_finished():
+	get_tree().current_scene.gameover() 

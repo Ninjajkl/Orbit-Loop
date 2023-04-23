@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bognv4241kcef"]
+[gd_scene load_steps=10 format=3 uid="uid://bognv4241kcef"]
 
 [ext_resource type="Texture2D" uid="uid://b5ejpia2vbh0h" path="res://Art/MenuArt/credits.png" id="1_e07ga"]
 [ext_resource type="Script" path="res://Scripts/credits.gd" id="2_ie4xh"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cifqhmvg20v0b" path="res://Art/MenuArt/creditsExitButton.png" id="4_liwgi"]
 [ext_resource type="Texture2D" uid="uid://52f83boalifg" path="res://Art/MenuArt/titleButtonPressed.png" id="4_wsgeu"]
 [ext_resource type="Texture2D" uid="uid://cquyf2huqror3" path="res://Art/MenuArt/titleButtonHover.png" id="5_cvous"]
-[ext_resource type="AudioStream" uid="uid://1xc1g8woedc1" path="res://Sound/Music/plh_orbitaloopsynthtest.mp3" id="5_i5gy5"]
 [ext_resource type="Texture2D" uid="uid://bthqclwv0dkms" path="res://Art/MenuArt/exitButtonPressed.png" id="7_uvcki"]
 [ext_resource type="Texture2D" uid="uid://0fet1tqnbfmh" path="res://Art/MenuArt/exitButtonHover.png" id="8_oeqmo"]
 
@@ -56,8 +55,7 @@ texture_pressed = ExtResource("7_uvcki")
 texture_hover = ExtResource("8_oeqmo")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_i5gy5")
-volume_db = -15.314
+volume_db = -15.0
 autoplay = true
 
 [connection signal="pressed" from="TitleButton" to="." method="_on_title_button_pressed"]
