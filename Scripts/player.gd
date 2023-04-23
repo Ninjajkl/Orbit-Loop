@@ -9,6 +9,7 @@ extends CharacterBody2D
 
 var shooting_cooldown = 0;
 var dead = false
+var healthBar : TextureProgressBar
 
 var PlayerAnim: AnimatedSprite2D
 var prevAnim = "idle"
@@ -17,6 +18,9 @@ var prevAnim = "idle"
 func _ready():
 	PlayerAnim = get_node("PlayerAnim")
 	PlayerAnim.set_animation("idle")
+	healthBar = get_parent().get_parent().get_parent().get_node("GUI/TextureProgressBar")
+	healthBar.set_max(health)
+	healthBar.set_value(health)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -69,6 +73,7 @@ func shoot():
 
 func gotHit():
 	health-=1
+	healthBar.set_value(health)
 	get_node("hitNoise").play()
 	if(health == 0):
 		dead=true

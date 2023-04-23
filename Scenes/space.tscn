@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cavrayjpptu48"]
+[gd_scene load_steps=17 format=3 uid="uid://cavrayjpptu48"]
 
 [ext_resource type="Script" path="res://Scripts/Space.gd" id="1_b45tk"]
 [ext_resource type="PackedScene" uid="uid://cc6ib7iqvvde3" path="res://Scenes/player.tscn" id="2_1u2xv"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d2n37mk820oa2" path="res://Art/MenuArt/smallExitButtonPressed.png" id="10_xw2yv"]
 [ext_resource type="Texture2D" uid="uid://7mq0ax8fsny0" path="res://Art/MenuArt/smallExitButtonHover.png" id="11_gwrcb"]
 [ext_resource type="AudioStream" uid="uid://1xc1g8woedc1" path="res://Sound/Music/plh_orbitaloopsynthtest.mp3" id="13_hm7iu"]
+[ext_resource type="Texture2D" uid="uid://ckui7ha062bmi" path="res://Art/MenuArt/loadFull.png" id="14_dcfdp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mejof"]
 animations = [{
@@ -94,6 +95,16 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="NotBackground"]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="GUI"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 68.0
+offset_bottom = 20.0
+texture_progress = ExtResource("14_dcfdp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_hm7iu")
