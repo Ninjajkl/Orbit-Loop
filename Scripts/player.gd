@@ -38,6 +38,10 @@ func _process(delta):
 		rotation -= rotation_speed*1.5 * delta
 		nextAnim = "turnLeft"
 	if(Input.is_action_pressed("focus")):
+		if(get_angle_to(get_global_mouse_position()) + 1.57 > 0):
+			nextAnim = "turnRight"
+		else:
+			nextAnim = "turnLeft"
 		look_at(get_global_mouse_position())
 		rotation += 1.57
 		pass
