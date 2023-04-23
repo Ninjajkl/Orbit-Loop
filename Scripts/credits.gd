@@ -13,6 +13,7 @@ func _process(_delta):
 
 func _on_title_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/title.tscn")
+	self.queue_free()
 
 
 func _on_exit_button_pressed():
